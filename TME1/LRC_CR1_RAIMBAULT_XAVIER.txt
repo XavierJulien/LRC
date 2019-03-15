@@ -1,0 +1,44 @@
+Exercice 1.2.1 :
+
+F1 : and A not imp B A -> Insatisfiable, une unique feuille fermée.
+
+F2 : imp and or A C or B C imp not B or and A B C -> Satisfiable, une feuille ouverte. Egalement Valide
+not F2, toutes les feuilles sont fermées.
+
+F3 : not imp imp A B imp not B not A -> Insatisfiable, toutes ses feuilles sont fermées.
+
+F4 : or and imp A B imp B C and imp C B imp B A -> Satisfiable, au moins une feuille ouverte.
+Non Valide car sa négation comporte des feuilles ouvertes.
+
+F5 : equiv imp imp A B imp B C imp A C -> Satisfiable, au moins une feuille ouverte.
+Non Valide car sa négation comporte des feuilles ouvertes.
+
+F6 : imp and imp A B imp B C imp A C -> Satisfiable, une feuille ouverte. Egalement Valide
+not F6, toutes les feuilles sont fermées.
+
+Exercice 1.3.3 :
+
+Je pense en tant que médecin qualifié que le patient est atteint d'une bronchite et qu'il ne nécéssite pas de tamiflu car on observe que l'arbre est valide donc que le cas ou " not Tamiflu" est satisfiable, alors la prise de tamiflu n'est pas impliquée dans tout les cas.
+
+or imp and Toux Sup38 imp Grippe Tamiflu imp and Toux Sup38 imp Bronchite not Tamiflu 
+
+Exercice 1.4.3 :
+
+A B C    ((A -> B) AND B AND C) OR ((C -> B) AND (B -> A))
+0 0 0	 VRAI
+0 0 1	 FAUX
+0 1 0	 FAUX
+0 1 1	 VRAI
+1 0 0	 VRAI
+1 0 1	 FAUX
+1 1 0	 VRAI
+1 1 1    VRAI
+
+
+A OR B OR C
+
+Bilan :
+
+Nous avons appris a déterminer si une formule est satisfiable, insatisfiable ou valide grâce à la
+méthode des tableaux. Une formule est valide si sa négation est insatisfiable. Notion de pré-modèle.
+Nous avons également appris qu'il fallait prendre du tamiflu en cas de grippe.

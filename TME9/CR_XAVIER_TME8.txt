@@ -1,0 +1,4 @@
+Exercice 3 : 
+3/ Un réseau borné, quasi vivant, sans blocage et réversible, mais pas vivant.
+Cela est impossible car le fait qu'un réseau soit sans blocage et réservsible et borné implique qu'il soit vivant donc faire un réseau vivant , et pas vivant est impossible.
+

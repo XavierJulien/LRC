@@ -1,0 +1,65 @@
+-----Exercice 2-----
+
+--subsS1--
+1/
+Ces règles traduisent la transitivité des subsomptions, si chat subsumme felin et felin subsumme animal, alors chat subsumme animal.
+
+2/
+?- subsS1(canari,animal).
+true .
+
+?- subsS1(chat,etreVivant).
+true .
+
+3/
+Il n'y a jamais de cas d'arrêt valide pour une subsomption fausse donc la récursion ne s'arrête pas.
+
+--subsS--
+
+4/
+?- subsS(canari,animal).
+true .
+
+?- subsS(chat,etreVivant).
+true .
+
+?- subsS(chien,canide).
+true .
+
+?- subsS(canide,chien).
+true .
+
+5/
+On as pas encore défini à quoi servait some(R) alors que dans les faits on indique subs(animal,some(mange)). et on sait que subs(souris,animal) renvoie true ,alors l'ordinateur applique naivement l'algorithme et renvoie true.
+
+6/
+?- subsS(chat,humain).
+false.
+
+?- subsS(chien,souris).
+false.
+
+7/
+pour la requete subsS(chat,X). il devrait me rendre toutes les subsomptions de chat et inversement avec subs(X,mammifere).
+
+trace : 
+?- subsS(chat,X).
+X = chat ;
+X = felin ;
+X = mammifere ;
+X = animal ;
+X = etreVivant ;
+X = some(mange) ;
+false.
+
+?- subsS(X,mammifere).
+X = mammifere ;
+X = souris ;
+X = felin ;
+X = canide ;
+X = chat ;
+X = lion ;
+X = chien ;
+false.
+
+8/

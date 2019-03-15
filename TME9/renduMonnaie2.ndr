@@ -1,0 +1,32 @@
+t 240.0 25.0 insert50c s 0 w n {} ne
+t 375.0 25.0 insert1e s 0 w n {} ne
+t 165.0 615.0 rendu50c s 0 w n {} ne
+t 520.0 30.0 insert2e s 0 w n {} ne
+p 380.0 255.0 stock1e 10 n
+p 200.0 270.0 stock50c 10 n
+p 300.0 260.0 rendre50c 0 n
+p 595.0 245.0 stock2e 0 n
+t 25.0 240.0 t9 0 w n
+t 365.0 610.0 rendu1e s 0 w n {} ne
+p 515.0 245.0 {rendre1.50} 0 n
+t 460.0 380.0 rendre1eET50c s 0 w n {} ne
+p 440.0 245.0 rendre1e 0 n
+t 305.0 395.0 trendre50c s 0 w n {} ne
+e trendre50c rendre50c 2 se
+e rendre1eET50c rendre1e 1 n
+e rendre1e rendu1e 1 n
+e stock1e rendu1e 1 n
+e rendre1eET50c rendre50c 1 n
+e {rendre1.50} rendre1eET50c 1 n
+e stock50c t9 ?-1 n
+e t9 0.1206995619 52.34500931 stock50c 0.3956427999 114.8085363 10 nw
+e stock50c rendu50c 1 n
+e rendre50c rendu50c 1 n
+e insert1e rendre50c 1 n
+e insert2e {rendre1.50} 1 n
+e insert2e stock2e 1 n
+e insert1e stock1e 1 n
+e insert50c stock50c 1 n
+h renduMonnaie2
+
+

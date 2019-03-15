@@ -1,0 +1,6 @@
+revise(x) :- serieux(x).
+devoirs(x) :- conscient(x).
+reussir(x) :- revise(x).
+serieux(x) :- devoir(x).
+conscient(p).
+conscient(z).

@@ -1,0 +1,162 @@
+-----Exercice 2-----
+
+--subsS1--
+1/
+Ces règles traduisent la transitivité des subsomptions, si chat subsumme felin et felin subsumme animal, alors chat subsumme animal.
+
+2/
+?- subsS1(canari,animal).
+true .
+
+?- subsS1(chat,etreVivant).
+true .
+
+3/
+Il n'y a jamais de cas d'arrêt valide pour une subsomption fausse donc la récursion ne s'arrête pas.
+
+--subsS--
+
+4/
+?- subsS(canari,animal).
+true .
+
+?- subsS(chat,etreVivant).
+true .
+
+?- subsS(chien,canide).
+true .
+
+?- subsS(canide,chien).
+true .
+
+5/
+On as pas encore défini à quoi servait some(R) alors que dans les faits on indique subs(animal,some(mange)). et on sait que subs(souris,animal) renvoie true ,alors l'ordinateur applique naivement l'algorithme et renvoie true.
+
+6/
+?- subsS(chat,humain).
+false.
+
+?- subsS(chien,souris).
+false.
+
+7/
+pour la requete subsS(chat,X). il devrait me rendre toutes les subsomptions de chat et inversement avec subs(X,mammifere).
+
+trace : 
+?- subsS(chat,X).
+X = chat ;
+X = felin ;
+X = mammifere ;
+X = animal ;
+X = etreVivant ;
+X = some(mange) ;
+false.
+
+?- subsS(X,mammifere).
+X = mammifere ;
+X = souris ;
+X = felin ;
+X = canide ;
+X = chat ;
+X = lion ;
+X = chien ;
+false.
+
+9/
+Avant :
+?- subsS(lion,all(mange, animal)).
+false.
+Après : 
+[trace]  ?- subsS(lion,all(mange, animal)).
+   Call: (7) subsS(lion, all(mange, animal)) ? creep
+   Call: (8) subs(lion, _G2339) ? creep
+   Exit: (8) subs(lion, felin) ? creep
+   Call: (8) equiv(felin, all(mange, animal)) ? creep
+   Fail: (8) equiv(felin, all(mange, animal)) ? creep
+   Redo: (8) subs(lion, _G2339) ? creep
+   Exit: (8) subs(lion, carnivoreExc) ? creep
+   Call: (8) equiv(carnivoreExc, all(mange, animal)) ? creep
+   Exit: (8) equiv(carnivoreExc, all(mange, animal)) ? creep
+   Exit: (7) subsS(lion, all(mange, animal)) ? creep
+true .
+
+10/On as plus d'intérêt à dériver subsS(A,B) car cela nous permet de faire une récursion sur toutes nos subsomptions de A et voir si on arrive à en trouver une qui soit equivalente à B alors que le faire sur subs(A,B) se limite que à un rang en dessous de subsomption.
+Cela nous permet donc de traiter toutes nos requêtes car on a désormais la subsomption et l'equivalence qui nous permet de manipuler nos faits.
+
+
+
+
+-------EXERCICE 3---------
+1/
+?- subsS(chihuahua,and(mammifere,some(aMaitre))).
+true .
+?- subsS(and(chien,some(aMaitre)),pet).
+true .
+?- subsS(chihuahua,and(pet,chien)).
+true .
+
+2/
+
+subsS(C,and(D1,D2),L):-D1\=D2,subsS(C,D1,L),subsS(C,D2,L).
+subsomption de C et l'intersection de D1 et D2: 
+-D1 est différent de D2
+-la sumbsomption de C et D1 est vraie et la subsomption de C et D2 est vraie.
+Cas exclu = subsS(animal,and(etreVivant,some(mange)),L).
+
+subsS(C,D,L):-subs(and(D1,D2),D),E=and(D1,D2),not(member(E,L)), subsS(C,E,[E|L]),E\==C.
+on chercher à trouver une intersection qui subsume C et qui est subsumé par D. :
+-subsomption de l'intersection de D1 et D2 inconnu et D.
+-E = intersection de D1 et D2 inconnu
+-E ne fait pas partie des concepts déja vu
+-la sumbsomption de C et E avec E dans la liste
+-E soit different de C.
+Cas Exclu = ?
+
+subsS(and(C,C),D,L):-nonvar(C),subsS(C,D,[C|L]).
+subsomption de C intersection C et D. on cherche a savoir si C est une variablé affecté à une valeur avant de verifier la subsomption.
+-si C est une variable non libre
+-si subsomption de C et D avec ajout de C dans L
+Cas Exclu = ?
+
+subsS(and(C1,C2),D,L):-C1\=C2,subsS(C1,D,[C1|L]).
+subsS(and(C1,C2),D,L):-C1\=C2,subsS(C2,D,[C2|L]).
+subsomption de C1 inter C2 et D. dans ces deux cas on cherche a savoir si séparément les deux C1 et C2 sont eux-même subsumé par D: 
+-si C1 est différent de C2.
+Cas 1 : - si C1 subsumé par D.
+Cas exclu = ?
+Cas 2 : - si C2 subsumé par D.
+Cas exclu = ?
+
+subsS(and(C1,C2),D,L):-subs(C1,E1),E=and(E1,C2),not(member(E,L)),subsS(E,D,[E|L]),E\==D.
+subsomption de C1 inter C2 et D. on cherche a savoir si on peut trouver une intersection plus courte entre C1 et C2.
+- si C1 subsumé par un E1 inconnu.
+- E qui est égal à la nouvelle intersection de la subsomption de C1 et C2.
+- si E n'est pas dans la liste des concepts atomiques déja croisés.
+- si la subsomption de E et D est vérifiable.
+- si E est différent de D.
+Cas exclu = subsS(and(X,Y),animal). on n'arrive pas a trouvé de cas validant cette requete.
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,84 @@
+Compte rendu tme2 :
+
+Exercice 3:
+
+1/
+
+revise(X) :- serieux(X).
+devoirs(X) :- conscient(X).
+reussir(X) :- revise(X).
+serieux(X) :- devoirs(X).
+conscient(p).
+conscient(z).
+
+2/ 
+[trace]  ?- reussir(X).
+   Call: (7) reussir(_G5339) ? Unknown option (h for help)
+   Call: (7) reussir(_G5339) ? Unknown option (h for help)
+   Call: (7) reussir(_G5339) ? Unknown option (h for help)
+   Call: (7) reussir(_G5339) ? Unknown option (h for help)
+   Call: (7) reussir(_G5339) ? Unknown option (h for help)
+   Call: (7) reussir(_G5339) ? creep
+   Call: (8) revise(_G5339) ? creep
+   Call: (9) serieux(_G5339) ? creep
+   Call: (10) devoirs(_G5339) ? creep
+   Call: (11) conscient(_G5339) ? creep
+   Exit: (11) conscient(p) ? creep
+   Exit: (10) devoirs(p) ? creep
+   Exit: (9) serieux(p) ? creep
+   Exit: (8) revise(p) ? creep
+   Exit: (7) reussir(p) ? creep
+X = p ;
+   Redo: (11) conscient(_G5339) ? creep
+   Exit: (11) conscient(z) ? creep
+   Exit: (10) devoirs(z) ? creep
+   Exit: (9) serieux(z) ? creep
+   Exit: (8) revise(z) ? creep
+   Exit: (7) reussir(z) ? creep
+X = z.
+
+Exercice 4 :
+
+pere(antonio, julien).
+mere(marie, julien).
+mere(marie, tania).
+mere(marie, gabriel).
+pere(jacques, titouan).
+mere(gaelle, titouan).
+
+parent(X,Y) :- mere(X,Y).
+parent(X,Y) :- pere(X,Y).
+
+-----------------------------------------------------------
+?- parent(marie, julien).
+true .
+
+?- parent(marie, titouan).
+false.
+
+?- parent(jacques, julien).
+false.
+
+?- parent(gaelle, titouan).
+true ;
+false.
+
+?- parent(X, titouan).
+X = gaelle ;
+X = jacques.
+
+?- parent(marie, X).
+X = julien ;
+X = tania ;
+X = gabriel ;
+false.
+
+-----------------------------------------------------------------
+
+
+
+
+
+
+
+

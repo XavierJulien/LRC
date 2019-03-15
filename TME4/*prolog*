@@ -1,0 +1,22 @@
+Welcome to SWI-Prolog (Multi-threaded, 64 bits, Version 7.2.3)
+Copyright (c) 1990-2015 University of Amsterdam, VU Amsterdam
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software,
+and you are welcome to redistribute it under certain conditions.
+Please visit http://www.swi-prolog.org for details.
+
+For help, use ?- help(Topic). or ?- apropos(Word).
+
+?- ERROR: /tmp/prolcomp2341Ldg.pl:1:4: Syntax error: Operator expected
+ERROR: /tmp/prolcomp2341Ldg.pl:3:2: Syntax error: Operator priority clash
+ERROR: /tmp/prolcomp2341Ldg.pl:5:
+	No permission to modify static procedure `true/0'
+ERROR: /tmp/prolcomp2341Ldg.pl:7:
+	catch/3: Undefined procedure: subsS1/2
+Warning: /tmp/prolcomp2341Ldg.pl:7:
+	Goal (directive) failed: user:subsS1(chat,etreVivant)
+ERROR: /tmp/prolcomp2341Ldg.pl:8:
+	No permission to modify static procedure `true/0'
+ERROR: /tmp/prolcomp2341Ldg.pl:10:1: Syntax error: End of file in quoted atom
+true.
+
+?- 

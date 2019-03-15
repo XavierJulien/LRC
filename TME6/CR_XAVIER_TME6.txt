@@ -1,0 +1,75 @@
+Exercice 1 : 
+1) F = not and knows P knows not knows P => satisfiable mais non valide car on as la NNF qui est insatisfiable
+2) F = and knows P knows knows not P => insatisfiable car on as P et ~P donc clash.
+3) F = not and knows P not knows knows not P => satisfiable car on as l'inverse qui satisfiable.
+
+Exercice 2 : 
+S5 : F = and not and not knows P not knows not knows P not and knows not knows P not not knows P =>  valide car on as que toutes le sbranches sont ouvertes si l'on as la possibilité de mettre des "ou (v)".
+
+S4 : F = equiv not nec P  nec not nec P => non valide car dans la NNF on as l'une des branches qui est satisfiable donc la formule F n'est pas valide mais satisfiable.
+
+Exercice 3 :
+2/
+<action>
+  <action-name>add</action-name>
+  <parameter>w3</parameter>
+  <parameter>isItTrue or nec Ra A nec not Ra A</parameter>
+</action>
+<action>
+  <action-name>add</action-name>
+  <parameter>w2</parameter>
+  <parameter>isItTrue or nec Ra A nec not Ra A</parameter>
+</action>
+<action>
+  <action-name>add</action-name>
+  <parameter>w1</parameter>
+  <parameter>isItTrue or nec Ra A nec not Ra A</parameter>
+</action>
+<action>
+  <action-name>add</action-name>
+  <parameter>w3</parameter>
+  <parameter>isItTrue or nec Rc C nec not Rc C</parameter>
+</action>
+<action>
+  <action-name>add</action-name>
+  <parameter>w2</parameter>
+  <parameter>isItTrue or nec Rc C nec not Rc C</parameter>
+</action>
+<action>
+  <action-name>add</action-name>
+  <parameter>w1</parameter>
+  <parameter>isItTrue or nec Rc C nec not Rc C</parameter>
+</action>
+
+3/ 
+<action>
+  <action-name>add</action-name>
+  <parameter>w3</parameter>
+  <parameter>isItTrue or nec Rb B nec not Rb B</parameter>
+</action>
+<action>
+  <action-name>add</action-name>
+  <parameter>w2</parameter>
+  <parameter>isItTrue or nec Rb B nec not Rb B</parameter>
+</action>
+<action>
+  <action-name>add</action-name>
+  <parameter>w1</parameter>
+  <parameter>isItTrue or nec Rb B nec not Rb B</parameter>
+</action>
+
+Etant donné que B peut "voir" si C à un papillon sur la tête alors, si C en a réelement un , il peut donc en déduire que B ne l'as pas.
+
+4/
+isItTrue nec A not or nec Rc C nec Rc not C : résultat  : Oui c'est vrai étant donné que A sait si C à un papillon sur la tête ou pas, or C n'as pas cette info donc A sait que C ne sait pas si il a ou pas le papillon sur la tête.
+
+5/isItTrue not and or nec Rb B nec Rb not B not nec Ka or nec Rb B nec Rb not B : résultat : oui , car étant donné que A sait si B à ou n'as pas de papillon sur la tête, alors il sait si B le sait ou pas.
+
+Exercice 4: 
+
+a/ L'agent 3 ne sait pas que B et ne sait pas que non B.
+b/ l'agent 1 ne sait pas que C et sait si B.
+c/ l'agent 2 sait que B ou sait que A et non B ou sait que C et non B.
+
+Exercice 5 : Pas réussi 
+

@@ -1,0 +1,20 @@
+t 195.0 170.0 t0 c 1 500 n {entrée client} ne
+p 370.0 50.0 p3 2 n {places libres} ne
+p 355.0 240.0 p2 0 n {places prises} ne
+p 355.0 425.0 p5 1 n barbier ne
+t 195.0 355.0 t3 c 0 w n {prise chaise} ne
+p 35.0 525.0 p7 0 n {Chaise Barbier} ne
+t 195.0 625.0 t5 c 40 70 n Rasage ne
+p 195.0 815.0 p8 0 w {Client rasé} ne
+e t5 p8 1 n
+e t5 p5 1 n
+e p7 t5 1 n
+e t3 p7 1 n
+e t3 0.3605001693 287.5708608 p3 0.4980472766 163.0122695 1 n
+e p5 t3 1 n
+e p2 t3 1 n
+e p3 t0 1 n
+e t0 p2 1 n
+h Exo4Q3
+
+

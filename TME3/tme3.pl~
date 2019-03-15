@@ -1,0 +1,24 @@
+/**Concatene(X, Y, Z)**/
+/*Cas d'arret */
+concatene([], L, L).
+/*Récursion*/
+concatene([X | L1],  L2, [X | L3]) :- concatene(L1, L2, L3). 
+
+/**Inverse(X, Y)**/
+/*Cas d'arret */
+inverse([], []).
+/*Récursion*/
+inverse([X|L1], LR):- inverse(L1, L2),concatene(L2,[X],LR).
+
+/**Supprime(X, Y, Z)**/
+/*Cas d'arret*/
+supprime([],_,[]).
+/*Récursion*/
+supprime([Y | L1], Y, LR) :- supprime(L1,Y,LR).
+supprime([X | L1], Y, LR) :- X\=Y,supprime(L1,Y,L2),concatene([X],L2,LR). 
+
+/**Filtre(L1, L2,L3)**/
+/*Cas d'arret*/
+filtre(L,[],L).
+/*Récursion*/
+filtre(L,[X|L1],LR) :- supprime(L,X,L2),filtre(L,L1,L2).

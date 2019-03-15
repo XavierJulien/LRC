@@ -1,0 +1,27 @@
+t 105.0 610.0 t3 c 0 w n rendu50c ne
+t 320.0 610.0 t4 c 0 w n rendu1e ne
+t 35.0 125.0 t0 c 0 w n insert50c ne
+p 30.0 330.0 p8 0 n cafe ne
+t 190.0 120.0 t1 c 0 w n insert1e ne
+p 195.0 285.0 p9 0 n client ne
+p 335.0 240.0 p6 10 n stock1e ne
+t 320.0 420.0 t5 c 0 w n rendu50c ne
+t 420.0 50.0 t2 c 0 w n insert2e ne
+p 465.0 240.0 p5 10 n stock50c ne
+p 600.0 240.0 p11 0 n stock2e ne
+t 480.0 420.0 t10 0 w n
+t 415.0 175.0 t11 0 w n
+e t11 p5 1 n
+e p6 t11 ?-1 n
+e t2 p11 1 n
+e t2 p9 1 n
+e p5 t5 1 n
+e p9 t5 1 n
+e p6 t5 1 n
+e t1 p6 1 n
+e t1 p9 1 n
+e t1 p8 1 n
+e t0 p8 1 n
+h renduMonnaie
+
+
